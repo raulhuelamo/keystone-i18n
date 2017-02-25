@@ -1,6 +1,6 @@
 {
   "name": "keystone-i18n",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple KeystoneJS i18n based on JSON locale files",
   "main": "index.js",
   "scripts": {

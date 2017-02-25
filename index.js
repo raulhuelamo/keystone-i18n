@@ -7,12 +7,18 @@ var keystone = require('keystone'),
 	extend = require('util')._extend,
 	i18n = require('i18n');
 
+// extend twig
+var twig = require('twig');
+twig.extendFunction("__", function(text, domain) {
+    if (typeof domain == 'undefined') domain = '';
+    return i18n.__(text, domain);
+});
+
 // define module
 var _this = {
 	defaultOptions: {
 		locales: ['en', 'es'],
-		directory: __dirname + '/locales',
-    		endpoint: '/lang',
+    	endpoint: '/lang',
 		defaultLocale: 'en',
 		cookie: 'language'
 	},
@@ -23,11 +29,11 @@ var _this = {
         i18n.configure(options);
         // Add-in i18n support
         keystone.pre('routes', i18n.init);
-	console.log('/' + options.endpoint.replace(/^\|+|\|+$/g, ''));
         // Locale switch endpoint
         keystone.app.get('/' + options.endpoint.replace(/^\/|\/$/g, '') + '/:lang', _this.switchLocale);
     },
     switchLocale: function (req, res) {
+        i18n.setLocale(req.params.lang);
         res.cookie('language', req.params.lang, { maxAge: 900000, httpOnly: true });
         res.redirect('back');
     }
