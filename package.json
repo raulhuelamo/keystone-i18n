@@ -1,0 +1,28 @@
+{
+  "name": "keystone-i18n",
+  "version": "0.0.1",
+  "description": "Simple KeystoneJS i18n based on JSON locale files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raulhuelamo/keystone-i18n.git"
+  },
+  "keywords": [
+    "keystone",
+    "keystonejs",
+    "i18n",
+    "locale"
+  ],
+  "author": "raul@huelamo.info",
+  "license": "GNU General Public License",
+  "bugs": {
+    "url": "https://github.com/raulhuelamo/keystone-i18n/issues"
+  },
+  "homepage": "https://github.com/raulhuelamo/keystone-i18n#readme",
+  "dependencies": {
+    "i18n": "^0.8.3"
+  }
+}
