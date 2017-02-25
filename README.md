@@ -2,7 +2,7 @@
 
 > Very simple KeystoneJS i18n based on JSON locale files & cookies
 
-This plugin is based on mashable/i18n node package, an amazingly powerful i18n for node - https://www.npmjs.com/package/i18n
+This plugin is a simple integration for Keystone of mashable/i18n node package, an amazingly powerful i18n for node - https://www.npmjs.com/package/i18n
 If you are looking for a more extensive i18n configuration, check their docs!
 
 ## Installation
