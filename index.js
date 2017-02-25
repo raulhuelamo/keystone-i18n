@@ -23,8 +23,9 @@ var _this = {
         i18n.configure(options);
         // Add-in i18n support
         keystone.pre('routes', i18n.init);
+	console.log('/' + options.endpoint.replace(/^\|+|\|+$/g, ''));
         // Locale switch endpoint
-        keystone.app.get('/' + options.endpoint.replace(/^\|+|\|+$/g, '') + '/:lang', _this.switchLocale);
+        keystone.app.get('/' + options.endpoint.replace(/^\/|\/$/g, '') + '/:lang', _this.switchLocale);
     },
     switchLocale: function (req, res) {
         res.cookie('language', req.params.lang, { maxAge: 900000, httpOnly: true });
