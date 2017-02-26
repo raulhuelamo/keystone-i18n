@@ -16,7 +16,7 @@ try {
 	console.log('twig module not found');
 }
 if (twigAvailable) {
-	var twig = require.resolve('twig');
+	var twig = require('twig');
 	twig.extendFunction("__", function(text, domain) {
 		if (typeof domain == 'undefined') domain = '';
 		return i18n.__(text, domain);
