@@ -8,11 +8,20 @@ var keystone = require('keystone'),
 	i18n = require('i18n');
 
 // extend twig
-var twig = require('twig');
-twig.extendFunction("__", function(text, domain) {
-    if (typeof domain == 'undefined') domain = '';
-    return i18n.__(text, domain);
-});
+var twigAvailable = true;
+try {
+	require.resolve('twig');
+} catch (e) {
+	twigAvailable = false;
+	console.log('twig module not found');
+}
+if (twigAvailable) {
+	var twig = require.resolve('twig');
+	twig.extendFunction("__", function(text, domain) {
+		if (typeof domain == 'undefined') domain = '';
+		return i18n.__(text, domain);
+	});
+}
 
 // define module
 var _this = {
