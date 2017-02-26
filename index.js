@@ -36,6 +36,7 @@ var _this = {
 		options = extend(_this.defaultOptions, options);
         // Configure i18n
         i18n.configure(options);
+        i18n.setLocale(options.defaultLocale);
         // Add-in i18n support
         keystone.pre('routes', i18n.init);
         // Locale switch endpoint
