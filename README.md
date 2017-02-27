@@ -34,13 +34,13 @@ Example JSON locale file
 }
 ```
 
-2. Load the plugin module
+1. Load the plugin module
 ```js
 // Require keystone-i18n
 var keystonei18n = require('keystone-i18n');
 ```
 
-3. Initialize keystone-i18n right before keystone app - default options are shown below
+1. Initialize keystone-i18n right before keystone app - default options are shown below
 ```js
 // Initialize Keystone i18n before starting keystone
 keystonei18n.init({
@@ -54,7 +54,7 @@ keystonei18n.init({
 keystone.start();
 ```
 
-4. Basic syntax - Use __() to translate a single phrase and add it to locales files if unknown. Returns translated parsed and substituted string.
+1. Basic syntax - Use __() to translate a single phrase and add it to locales files if unknown. Returns translated parsed and substituted string.
 
 ```javascript
 // template and global (this.locale == 'es') 
@@ -62,11 +62,11 @@ __('Hello'); // Hola
 __('Hello %s', 'Andrea'); // Hola Andrea
 ```
 
-5. Or use it into templates
+1. Or use it into templates
 ```html
 //- Jade
 h1 #{__('Hello')}
-//- Twig / Nunjucks / Handlebars
+//- Twig
 <h1>{{ __('Hello') }}</h1>
 ```
 
@@ -76,6 +76,10 @@ GNU General Public License
 
 ## Author
 Raul Huelamo - http://huelamo.info - raul@huelamo.info
+
+## TODO
+* Check Nunjucks / Handlebars compatibility
+* Generate locale files from Keystone CMS
 
 [npm-url]: https://npmjs.org/package/keystone-i18n
 [npm-image]: https://badge.fury.io/js/keystone-i18n.svg
